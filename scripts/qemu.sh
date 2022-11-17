@@ -18,5 +18,5 @@ case "$1" in
 esac
 
 export ESP_ARCH=xtensa-esp32-espidf
-cargo espflash save-image --chip esp32 --merge target/${ESP_ARCH}/${BUILD_MODE}/dlogv2
+cargo espflash save-image --chip esp32 --merge target/${ESP_ARCH}/${BUILD_MODE}/aqua-track --partition-table partitions.csv
 qemu-system-xtensa -nographic -machine esp32 -drive file=dlogv2,if=mtd,format=raw
